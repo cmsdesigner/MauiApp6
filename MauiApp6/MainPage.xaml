@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="MauiApp6.MainPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:MauiApp6.Controls">
+    <ScrollView>
+        <StackLayout>
+
+            <local:WizardStepsControl x:Name="stepsControl" StepChanged="stepsControl_StepChanged">
+
+                <local:SetupWizardWelcomeView Padding="10">
+                    <VerticalStackLayout HorizontalOptions="Center" VerticalOptions="Center">
+                        <Label
+                            FontAttributes="Bold"
+                            FontSize="Large"
+                            Text="Welcom" />
+                        <Label
+                            FontSize="Medium"
+                            Text="Please feel in your data in differente screens"
+                            TextColor="Orange" />
+                    </VerticalStackLayout>
+                </local:SetupWizardWelcomeView>
+
+                <local:SetupWizardPool1View>
+                    <Grid RowDefinitions="auto,auto,auto">
+                        <Entry Grid.Row="0" Placeholder="Your User Name" />
+                        <Entry Grid.Row="1" Placeholder="Your Email" />
+                        <Entry Grid.Row="2" Placeholder="Your Phone" />
+                    </Grid>
+                </local:SetupWizardPool1View>
+
+                <local:SetupWizardPool2View>
+                    <Entry Placeholder="Your Company" />
+                </local:SetupWizardPool2View>
+
+                <local:SetupWizardPool3View>
+                    <Entry Placeholder="Enter your adress" />
+                </local:SetupWizardPool3View>
+
+            </local:WizardStepsControl>
+
+            <HorizontalStackLayout Grid.Row="1" HorizontalOptions="Center">
+                <Button
+                    BackgroundColor="Green"
+                    Clicked="OnPreviousClicked"
+                    Text=" Précédent" />
+                <Button
+                    BackgroundColor="OrangeRed"
+                    Clicked="OnNextClicked"
+                    Text="Suivant" />
+            </HorizontalStackLayout>
+            <Button
+                Grid.Row="2"
+                Margin="10"
+                Clicked="OnEnregistrerClicked"
+                Text="Enregistrer" />
+        </StackLayout>
+    </ScrollView>
+
+</ContentPage>
